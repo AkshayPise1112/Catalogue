@@ -20,12 +20,12 @@ const RegisterStudent = asyncHandler(async (req, res) => {
 	for (let i = 0; i < students.length; i++) {
 		const stud = await Student.findById(students[i]);
 
-		if (stud.rollNo === rollNo) {
+		if (stud?.rollNo === rollNo) {
 			throw new ApiError(409, 'The Student Has Already Registered..');
 		}
 	}
 
-	// console.log('Class');
+	// console.log('\nClass');
 
 	const student = await Student.create({
 		rollNo,

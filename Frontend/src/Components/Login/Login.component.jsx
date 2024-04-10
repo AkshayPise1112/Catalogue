@@ -67,6 +67,7 @@ const Login = ({ loggedIn, setLoggedIn, isLoading, setIsLoading }) => {
 			setIsLoading(false);
 			setLoggedIn(true);
 		}
+		setIsLoading(false);
 	};
 
 	function handleRegister(e) {
